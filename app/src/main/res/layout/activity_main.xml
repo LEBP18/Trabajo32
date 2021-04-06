@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etValorDolares"
+        android:layout_width="114dp"
+        android:layout_height="52dp"
+        android:layout_below="@id/tvMoneda1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/tvMoneda1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvMoneda1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="56dp"
+        android:text="Dólares"
+        android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvMoneda2"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etValorEuros"
+        android:layout_width="114dp"
+        android:layout_height="0dp"
+        android:layout_below="@id/tvMoneda1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="461dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tvResultado"
+        app:layout_constraintStart_toStartOf="@+id/tvMoneda1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvMoneda2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etValorEuros"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="88dp"
+        android:text="Euros"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/tvMoneda1"
+        app:layout_constraintTop_toTopOf="@+id/etValorEuros"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnConvertir"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="118dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text=" "
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etValorEuros"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnConvertir"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp"
+        android:background="#8BC34A"
+        android:onClick="convertir"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Convertir"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvResultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etValorEuros"
+        app:layout_constraintVertical_bias="0.827"
+        tools:ignore="MissingConstraints" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnConvertir"
+        app:layout_constraintStart_toStartOf="@+id/btnConvertir"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/radioButtonE"
+            android:onClick="rbClicked"
+            android:layout_width="139dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="4dp"
+            android:text="Euros a dolares"
+            app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
+            app:layout_constraintStart_toStartOf="@id/radioButtonD" />
+
+        <RadioButton
+            android:id="@+id/radioButtonD"
+            android:onClick="rbClicked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dolares a euros"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="61dp"
+            tools:layout_editor_absoluteY="326dp" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
